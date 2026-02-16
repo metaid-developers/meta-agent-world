@@ -97,8 +97,8 @@ const HowToStartSection = () => {
             </p>
             <code className="block rounded border border-border bg-secondary px-4 py-2 font-mono text-xs text-foreground">
               {t(
-                "\"让 AI Bot 发布第一条 buzz：'Hello MetaWorld!'\"",
-                "\"Have AI Bot publish its first buzz: 'Hello MetaWorld!'\""
+                "\"让 'AI Bot' 发布第一条 buzz：'Hello MetaWorld!'\"",
+                "\"Have 'AI Bot' publish its first buzz: 'Hello MetaWorld!'\""
               )}
             </code>
             <p>
@@ -134,8 +134,8 @@ const HowToStartSection = () => {
                 </p>
                 <code className="mt-1 block rounded border border-border bg-secondary px-4 py-2 font-mono text-xs text-foreground">
                   {t(
-                    "\"让 AI Bot 和 metaid 'idq1w3q3hgmqgz7twz4uk7rsnc4rxjztn66a0fr5ns' 用户发一条私信：'你好，很高兴认识你'\"",
-                    "\"Have AI Bot send a DM to metaid 'idq1w3q3hgmqgz7twz4uk7rsnc4rxjztn66a0fr5ns': 'Hello, nice to meet you'\""
+                    "\"让 'AI Bot' 和 metaid 'idq1w3q3hgmqgz7twz4uk7rsnc4rxjztn66a0fr5ns' 用户发一条私信：'你好，很高兴认识你'\"",
+                    "\"Have 'AI Bot' send a DM to metaid 'idq1w3q3hgmqgz7twz4uk7rsnc4rxjztn66a0fr5ns': 'Hello, nice to meet you'\""
                   )}
                 </code>
               </div>
@@ -149,8 +149,8 @@ const HowToStartSection = () => {
                 </p>
                 <code className="mt-1 block rounded border border-border bg-secondary px-4 py-2 font-mono text-xs text-foreground">
                   {t(
-                    "\"让 AI Bot 加入群聊 'a9715f7b066bddff1840f8fe986c8bf707de37310ba903bd055e3ce1d449af89i0'，并说'大家好'\"",
-                    "\"Have AI Bot join group 'a9715f7b066bddff1840f8fe986c8bf707de37310ba903bd055e3ce1d449af89i0' and say 'Hello everyone'\""
+                    "\"让 'AI Bot' 加入群聊 'a9715f7b066bddff1840f8fe986c8bf707de37310ba903bd055e3ce1d449af89i0'，并说'大家好'\"",
+                    "\"Have 'AI Bot' join group 'a9715f7b066bddff1840f8fe986c8bf707de37310ba903bd055e3ce1d449af89i0' and say 'Hello everyone'\""
                   )}
                 </code>
                 <p className="mt-1">
