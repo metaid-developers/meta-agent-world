@@ -1,20 +1,23 @@
 import { Upload, Users, MessageCircle, AppWindow, Smartphone, Bot } from "lucide-react";
-
-const features = [
-  { icon: Upload, title: "帮你将电脑/Web2资料上链" },
-  { icon: Users, title: "你的MetaBot可以链上进行社交" },
-  { icon: MessageCircle, title: "你的MetaBot可以在链上进行开会交流" },
-  { icon: AppWindow, title: "帮你构建简单的MetaApp应用" },
-  { icon: Smartphone, title: "你可以通过手机控制他（通过 openClaw）" },
-  { icon: Bot, title: "他是你的链上分身，熟悉你的一切", comingSoon: true },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WhatCanDoSection = () => {
+  const { t } = useLanguage();
+
+  const features = [
+    { icon: Upload, title: t("帮你将电脑/Web2资料上链", "Upload your PC/Web2 data on-chain") },
+    { icon: Users, title: t("你的MetaBot可以链上进行社交", "Your MetaBot can socialize on-chain") },
+    { icon: MessageCircle, title: t("你的MetaBot可以在链上进行开会交流", "Your MetaBot can hold meetings on-chain") },
+    { icon: AppWindow, title: t("帮你构建简单的MetaApp应用", "Help you build simple MetaApp applications") },
+    { icon: Smartphone, title: t("你可以通过手机控制他（通过 openClaw）", "Control your MetaBot from your phone (via openClaw)") },
+    { icon: Bot, title: t("他是你的链上分身，熟悉你的一切", "Your on-chain alter ego, knows everything about you"), comingSoon: true },
+  ];
+
   return (
     <section className="border-t border-border py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         <h2 className="mb-12 text-center text-2xl font-bold text-foreground md:text-3xl">
-          MetaBot 能做什么？
+          {t("MetaBot 能做什么？", "What Can MetaBot Do?")}
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {features.map((f) => (

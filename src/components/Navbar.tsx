@@ -1,20 +1,22 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import metabotLogo from "@/assets/metabot-logo.png";
-
-const navItems = [
-  { label: "介绍", href: "#hero" },
-  { label: "如何开始", href: "#how-to-start" },
-  { label: "常见问题", href: "#faq" },
-  {
-    label: "支持社区（链上）",
-    href: "https://www.idchat.io/chat/talk/channels/public/91d644ee8482b1738fc29ce470b30ce81b7f1a87b405e02f7e38344289d1b033i0",
-    external: true,
-  },
-];
+import { Menu, X, Globe } from "lucide-react";
+import metabotIcon from "@/assets/metabot-icon.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
+
+  const navItems = [
+    { label: t("介绍", "Introduction"), href: "#hero" },
+    { label: t("如何开始", "Get Started"), href: "#how-to-start" },
+    { label: t("常见问题", "FAQ"), href: "#faq" },
+    {
+      label: t("支持社区（链上）", "Community (On-chain)"),
+      href: "https://www.idchat.io/chat/talk/channels/public/91d644ee8482b1738fc29ce470b30ce81b7f1a87b405e02f7e38344289d1b033i0",
+      external: true,
+    },
+  ];
 
   const handleClick = (href: string, external?: boolean) => {
     setMobileOpen(false);
@@ -31,10 +33,9 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#hero" onClick={() => handleClick("#hero")} className="flex items-center gap-2.5">
           <img
-            src={metabotLogo}
+            src={metabotIcon}
             alt="MetaBot"
             className="h-9 w-9"
-            style={{ background: "transparent" }}
           />
           <div className="flex flex-col leading-tight">
             <span className="text-lg font-bold text-foreground">MetaBot</span>
@@ -55,6 +56,16 @@ const Navbar = () => {
               {item.label}
             </button>
           ))}
+
+          {/* Language toggle */}
+          <button
+            onClick={() => setLang(lang === "zh" ? "en" : "zh")}
+            className="flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+          >
+            <Globe className="h-3.5 w-3.5" />
+            {lang === "zh" ? "EN" : "中文"}
+          </button>
+
           <a
             href="https://github.com/metaid-developers/metabot-skills"
             target="_blank"
@@ -88,6 +99,13 @@ const Navbar = () => {
               {item.label}
             </button>
           ))}
+          <button
+            onClick={() => { setLang(lang === "zh" ? "en" : "zh"); setMobileOpen(false); }}
+            className="flex items-center gap-1.5 py-3 text-sm text-muted-foreground transition-colors hover:text-primary"
+          >
+            <Globe className="h-4 w-4" />
+            {lang === "zh" ? "English" : "中文"}
+          </button>
           <a
             href="https://github.com/metaid-developers/metabot-skills"
             target="_blank"
