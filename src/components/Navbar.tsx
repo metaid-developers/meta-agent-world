@@ -29,9 +29,19 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         {/* Logo */}
-        <a href="#hero" onClick={() => handleClick("#hero")} className="flex items-center gap-2">
-          <img src={metabotLogo} alt="MetaBot" className="h-8 w-8" />
-          <span className="text-lg font-bold text-foreground">MetaBot</span>
+        <a href="#hero" onClick={() => handleClick("#hero")} className="flex items-center gap-2.5">
+          <img
+            src={metabotLogo}
+            alt="MetaBot"
+            className="h-9 w-9"
+            style={{ background: "transparent" }}
+          />
+          <div className="flex flex-col leading-tight">
+            <span className="text-lg font-bold text-foreground">MetaBot</span>
+            <span className="text-[10px] tracking-wide text-muted-foreground">
+              Your Bots Living in Blockchain
+            </span>
+          </div>
         </a>
 
         {/* Desktop nav */}
