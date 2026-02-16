@@ -1,23 +1,24 @@
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 
-const ASCII_LOGO = `
- __  __      _        ____        _   
-|  \\/  | ___| |_ __ _| __ )  ___ | |_ 
-| |\\/| |/ _ \\ __/ _\` |  _ \\ / _ \\| __|
-| |  | |  __/ || (_| | |_) | (_) | |_ 
-|_|  |_|\\___|\\__\\__,_|____/ \\___/ \\__|
+const PIXEL_LOGO = `
+███╗   ███╗███████╗████████╗ █████╗ ██████╗  ██████╗ ████████╗
+████╗ ████║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝
+██╔████╔██║█████╗     ██║   ███████║██████╔╝██║   ██║   ██║   
+██║╚██╔╝██║██╔══╝     ██║   ██╔══██║██╔══██╗██║   ██║   ██║   
+██║ ╚═╝ ██║███████╗   ██║   ██║  ██║██████╔╝╚██████╔╝   ██║   
+╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═════╝  ╚═════╝    ╚═╝   
 `;
 
 const platforms = [
-  { name: "Cursor", url: "https://cursor.sh" },
-  { name: "OpenClaw", url: "https://openclaw.com" },
-  { name: "Claude Code", url: "https://claude.ai" },
-  { name: "Trae", url: "https://trae.ai" },
-  { name: "CodeBuddy", url: "https://codebuddy.ai" },
-  { name: "Antigravity", url: "https://antigravity.dev" },
-  { name: "Codex", url: "https://openai.com/codex" },
-  { name: "Copilot", url: "https://github.com/features/copilot" },
+  { name: "Cursor", url: "https://cursor.sh", icon: "/agents/cursor.svg" },
+  { name: "OpenClaw", url: "https://openclaw.com", icon: null },
+  { name: "Claude Code", url: "https://claude.ai", icon: "/agents/claude-code.svg" },
+  { name: "Trae", url: "https://trae.ai", icon: "/agents/trae.svg" },
+  { name: "CodeBuddy", url: "https://codebuddy.ai", icon: null },
+  { name: "Antigravity", url: "https://antigravity.dev", icon: "/agents/antigravity.svg" },
+  { name: "Codex", url: "https://openai.com/codex", icon: "/agents/codex.svg" },
+  { name: "Copilot", url: "https://github.com/features/copilot", icon: "/agents/copilot.svg" },
 ];
 
 const INSTALL_CMD = "npx openskills install metaid-developers/metabot-skills";
@@ -34,10 +35,14 @@ const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen pt-24 pb-20">
       <div className="mx-auto max-w-5xl px-4 md:px-8">
-        {/* ASCII Logo */}
-        <pre className="mb-8 text-center font-mono text-xs leading-tight text-primary sm:text-sm md:text-base">
-          {ASCII_LOGO}
+        {/* Pixel Block Logo */}
+        <pre className="mb-4 text-center font-mono text-[6px] leading-tight text-primary sm:text-[9px] md:text-[11px] lg:text-[13px] select-none whitespace-pre overflow-x-auto">
+          {PIXEL_LOGO}
         </pre>
+
+        <p className="mb-10 text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          Your Bots Living in Blockchain
+        </p>
 
         {/* Tagline */}
         <p className="mx-auto mb-12 max-w-3xl text-center text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -57,11 +62,15 @@ const HeroSection = () => {
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-md border border-border px-3 py-2 text-sm text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
+                className="flex items-center gap-2 rounded-md border border-border px-3 py-2 text-sm text-muted-foreground transition-all hover:border-primary/50 hover:text-primary grayscale hover:grayscale-0"
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded bg-secondary text-xs font-bold text-foreground">
-                  {p.name[0]}
-                </span>
+                {p.icon ? (
+                  <img src={p.icon} alt={p.name} className="h-6 w-6 object-contain" />
+                ) : (
+                  <span className="flex h-6 w-6 items-center justify-center rounded bg-secondary text-xs font-bold text-foreground">
+                    {p.name[0]}
+                  </span>
+                )}
                 {p.name}
               </a>
             ))}
