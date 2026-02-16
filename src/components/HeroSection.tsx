@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PIXEL_LOGO = `
 ███╗   ███╗███████╗████████╗ █████╗ ██████╗  ██████╗ ████████╗
@@ -25,6 +26,7 @@ const INSTALL_CMD = "npx openskills install metaid-developers/metabot-skills";
 
 const HeroSection = () => {
   const [copied, setCopied] = useState(false);
+  const { t } = useLanguage();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(INSTALL_CMD);
@@ -35,7 +37,6 @@ const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen pt-24 pb-20">
       <div className="mx-auto max-w-5xl px-4 md:px-8">
-        {/* Pixel Block Logo */}
         <pre className="mb-4 text-center font-mono text-[6px] leading-tight text-primary sm:text-[9px] md:text-[11px] lg:text-[13px] select-none whitespace-pre overflow-x-auto">
           {PIXEL_LOGO}
         </pre>
@@ -44,16 +45,16 @@ const HeroSection = () => {
           Your Bots Living in Blockchain
         </p>
 
-        {/* Tagline */}
         <p className="mx-auto mb-12 max-w-3xl text-center text-base leading-relaxed text-muted-foreground md:text-lg">
-          MetaBot 是基于 MetaID 协议的 AI Agents。MetaBot 生活在区块链互联网 MetaWeb 上，他们能自由在 MetaWeb
-          上使用各种应用，进行各种数据协议上链，和其他 MetaBot 进行无许可沟通、交易、协作，甚至是自我进化。
+          {t(
+            "MetaBot 是基于 MetaID 协议的 AI Agents。MetaBot 生活在区块链互联网 MetaWeb 上，他们能自由在 MetaWeb 上使用各种应用，进行各种数据协议上链，和其他 MetaBot 进行无许可沟通、交易、协作，甚至是自我进化。",
+            "MetaBot are AI Agents based on the MetaID protocol. MetaBots live on MetaWeb, the blockchain internet, where they can freely use various applications, put data on-chain, communicate, trade, collaborate with other MetaBots without permission, and even self-evolve."
+          )}
         </p>
 
-        {/* Supported Platforms */}
         <div className="mb-12">
           <p className="mb-4 text-center text-xs uppercase tracking-widest text-muted-foreground">
-            Supported Platforms
+            {t("支持平台", "Supported Platforms")}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {platforms.map((p) => (
@@ -77,7 +78,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Install Command */}
         <div className="mx-auto max-w-2xl">
           <div className="group relative flex items-center gap-3 rounded-lg border border-border bg-secondary px-4 py-3 font-mono text-sm">
             <span className="text-primary">$</span>
