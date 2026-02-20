@@ -42,7 +42,7 @@ const HeroSection = () => {
         </pre>
 
         <p className="mb-10 text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">
-          Your Bots Living in Blockchain
+          AI Bots, Natively on the Blockchain
         </p>
 
         <p className="mx-auto mb-12 max-w-3xl text-center text-base leading-relaxed text-muted-foreground md:text-lg">
