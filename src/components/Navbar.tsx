@@ -40,7 +40,7 @@ const Navbar = () => {
           <div className="flex flex-col leading-tight">
             <span className="text-lg font-bold text-foreground">MetaBot</span>
             <span className="text-[10px] tracking-wide text-muted-foreground">
-              Your Bots Living in Blockchain
+              AI Bots, Natively on the Blockchain
             </span>
           </div>
         </a>
